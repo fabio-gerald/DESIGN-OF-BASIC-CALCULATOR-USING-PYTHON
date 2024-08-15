@@ -1,0 +1,60 @@
+
+# calculator:
+def calculator():
+  operator={"+":"sums","-":"sub","*":"mul","/":"div","**":"sq"}
+  a=float(input(f"give me your first number"))
+  print(f"you can use any of this operators to solve math problems")
+  for i in operator.keys():
+      print(i)
+  o=0
+  while o not in operator:
+    o=input("give me one of the math signs or  operator")
+  b=float(input(f"give me your second number"))
+  if o=="+":
+      sums=lambda a,b:a+b
+      p=sums(a,b)
+  elif o=="-":
+      sub=lambda a,b:a-b
+      p=sub(a,b)
+  elif o=="/":
+      div=lambda a,b:a/b
+      p=div(a,b)
+  elif o=="*" :
+      mul=lambda a,b:a*b
+      p=mul(a,b)
+  elif o=="**" :
+      sq=lambda a,b:a**b
+      p=sq(a,b)
+  c=input(f"do you want to perform more arithimetics with the already existing inputs ?  yes or no ")
+  c=c.lower()
+  if c=="no":
+      print(p)
+  while c=="yes":
+      print(f"you can use any of this operators to solve math problems")
+      for i in operator.keys():
+          print(i)
+      o=0
+      while o not in operator:
+        o=input("give me one of the math signs or  operator")
+      next_num=float(input(f"give me your next number"))
+      if o=="+":
+          sums=lambda next_num:p+next_num
+          d=sums(next_num)
+      elif o=="-":
+          sub=lambda next_num:p-next_num
+          d=sub(next_num)
+      elif o=="/":
+          div=lambda next_num:p/next_num
+          d=div(next_num)
+      elif o=="*" :
+          mul=lambda  next_num:p*next_num
+          d=mul(next_num)
+      elif o=="**" :
+          sq=lambda  next_num:p*next_num
+          d=sq(next_num)
+      e=d
+      p=e
+      c=input(f"do you want to perform more arithimetics with the already existing inputs ?  yes or no ")
+      c=c.lower()
+  print(p)
+calculator()
